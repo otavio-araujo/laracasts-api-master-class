@@ -2,11 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Ticket>
+ * @extends Factory<Ticket>
  */
 class TicketFactory extends Factory
 {
@@ -19,7 +20,7 @@ class TicketFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'title' => $this->faker->word(3, true),
+            'title' => $this->faker->title,
             'description' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement(['A', 'C', 'H', 'X']),
         ];
